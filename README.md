@@ -1,8 +1,17 @@
-# Streaming websites from dockerized browser
+# Streaming website from dockerized browser
 
 Based on this example: https://github.com/aws-samples/amazon-chime-sdk-recording-demo
 
 Description: https://medium.com/@afrimadonidinata/setup-online-meeting-recording-with-aws-chime-sdk-60c6e1f360c4
+
+## What need to work
+
+- [KNOWLEDGE](https://stackoverflow.com/)
+- [DOCKER](https://www.docker.com/get-started/)
+
+### for debuging
+
+- [VNC VIEWER](https://www.realvnc.com/pt/connect/download/viewer/)
 
 ## How it works
 
