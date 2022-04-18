@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  browser-stream:
+    build: .
+    image: alexjonas/webrtc-streamer:latest
+    volumes:
+      - ./:/home/user/app
+    environment:
+      - MEETING_URL=https://www.youtube.com/watch?v=GZVpbHLoGdc
+      - RTMP_URL=rtmp://sao01.contribute.live-video.net/app/live_41606168_8cUlEsj3DqxdAj0srSneCo8genclBb
+    ports:
+      - 5900:5900

@@ -8,11 +8,14 @@ VIDEO_GOP=$((VIDEO_FRAMERATE * 2))
 AUDIO_BITRATE='192k'
 AUDIO_SAMPLERATE=44100
 AUDIO_CHANNELS=2
+AUDIO_DELAY=4.84
 
 CMD=(
      ffmpeg
      -hide_banner
      -loglevel error
+     # delay audio
+     -itsoffset ${AUDIO_DELAY}
      # disable interaction via stdin
      -nostdin
      # screen image size
@@ -47,8 +50,11 @@ CMD=(
          # -af "aresample=async=1:min_hard_comp=0.100000:first_pts=0"
      # adjust fragmentation to prevent seeking(resolve issue: muxer does not support non seekable output)
      -movflags frag_keyframe+empty_moov
-     # set output format to RTSP
-     -f rtsp
+
+     # delay audio
+     -map 0:v -map 1:a 
+     # set output format to flv
+     -f flv
      "${RTMP_URL}"
 )
 

@@ -21,6 +21,7 @@ RUN /usr/bin/apt-get update && \
   pulseaudio \
   xvfb \
   firefox \
+  firefox-geckodriver \
   libnss3-tools \
   ffmpeg \
   xdotool \
