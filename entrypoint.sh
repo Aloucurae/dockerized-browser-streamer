@@ -54,4 +54,6 @@ wait -n
 jobs -p | xargs --no-run-if-empty kill
 wait
 
+echo "aki deveria ter um upload do arquivo ou a conversao dele para mp4"
+
 exit # If we're there that means wait -n was successful (otherwise set -e would terminate whole script before that)

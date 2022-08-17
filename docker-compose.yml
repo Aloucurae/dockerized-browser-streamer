@@ -16,3 +16,11 @@ services:
     #   - "inevent.localhost:192.168.0.108"
     # ports:
     #   - 5900:5900
+    deploy:
+      resources:
+        limits:
+          cpus: '6'
+          memory: 8G
+        reservations:
+          cpus: '4'
+          memory: 4G
