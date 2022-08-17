@@ -26,5 +26,6 @@ exec google-chrome \
   --no-sandbox \
   --disable-sync \
   --no-first-run \
+  --explicitly-allowed-ports=8888 \
   --user-data-dir=/tmp/chrome-profile \
   --kiosk "${MEETING_URL}"

@@ -8,6 +8,8 @@ export SCREEN_HEIGHT=${RECORDING_SCREEN_HEIGHT:-'1080'}
 # Setup shutdown logic. See https://linuxconfig.org/how-to-propagate-a-signal-to-child-processes-from-a-bash-script
 trap 'trap " " SIGINT; kill -SIGINT 0; wait;' SIGINT SIGTERM
 
+sleep 2
+
 # 0. Start D-Bus for PulseAudio
 sudo -i bash <<-SHELL
 mkdir -p /var/run/dbus
@@ -34,6 +36,8 @@ pacmd set-default-source v1.monitor  # Set the monitor of the v1 sink to be the 
 ./firefox.sh & # Or ./chrome.sh &
 sleep 0.5  # Wait a bit for firefox to start before moving on
 xdotool mousemove 1 1 click 1  # Move mouse out of the way so it doesn't trigger the "pause" overlay on the video tile
+
+sleep 10
 
 if [ -n "$RTMP_URL" ]; then
   # 4. FFmpeg to stream into some mediaserver like Wowza
