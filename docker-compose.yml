@@ -5,9 +5,13 @@ services:
     build: .
     image: alexjonas/webrtc-streamer:latest
     volumes:
-      - ./:/home/user/app
-    environment:
-      - MEETING_URL=https://www.youtube.com/watch?v=p6GhDMnKu3o
-      - RTMP_URL=rtmp://..............
+      - ./recordings:/home/user/app/recordings
+    # environment:
+    #   - MEETING_URL=https://www.youtube.com/watch?v=p6GhDMnKu3o
+    #   - RTMP_URL=rtmp://..............
+    env_file:
+      - ./.env
+    extra_hosts:
+      - "inevent.localhost:192.168.0.108"
     ports:
       - 5900:5900
